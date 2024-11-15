@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="" tests="7" assertions="17" errors="0" warnings="0" failures="0" skipped="0" time="0.090913">
+    <testsuite name="Unit" tests="1" assertions="1" errors="0" warnings="0" failures="0" skipped="0" time="0.001229">
+      <testsuite name="Tests\Unit\ExampleTest" file="/var/www/tests/Unit/ExampleTest.php" tests="1" assertions="1" errors="0" warnings="0" failures="0" skipped="0" time="0.001229">
+        <testcase name="test_example" class="Tests\Unit\ExampleTest" classname="Tests.Unit.ExampleTest" file="/var/www/tests/Unit/ExampleTest.php" line="14" assertions="1" time="0.001229"/>
+      </testsuite>
+    </testsuite>
+    <testsuite name="Feature" tests="6" assertions="16" errors="0" warnings="0" failures="0" skipped="0" time="0.089684">
+      <testsuite name="Tests\Feature\FormularioTest" file="/var/www/tests/Feature/FormularioTest.php" tests="6" assertions="16" errors="0" warnings="0" failures="0" skipped="0" time="0.089684">
+        <testcase name="testFormularioPreenchidoComSucesso" class="Tests\Feature\FormularioTest" classname="Tests.Feature.FormularioTest" file="/var/www/tests/Feature/FormularioTest.php" line="10" assertions="3" time="0.059817"/>
+        <testcase name="testFormularioNaoExistente" class="Tests\Feature\FormularioTest" classname="Tests.Feature.FormularioTest" file="/var/www/tests/Feature/FormularioTest.php" line="26" assertions="1" time="0.004055"/>
+        <testcase name="testCampoObrigatorioNaoPreenchido" class="Tests\Feature\FormularioTest" classname="Tests.Feature.FormularioTest" file="/var/www/tests/Feature/FormularioTest.php" line="38" assertions="3" time="0.009323"/>
+        <testcase name="testCampoSelectComValorInvalido" class="Tests\Feature\FormularioTest" classname="Tests.Feature.FormularioTest" file="/var/www/tests/Feature/FormularioTest.php" line="50" assertions="3" time="0.005944"/>
+        <testcase name="testCampoTextDeveSerUmaString" class="Tests\Feature\FormularioTest" classname="Tests.Feature.FormularioTest" file="/var/www/tests/Feature/FormularioTest.php" line="63" assertions="3" time="0.005227"/>
+        <testcase name="testCampoNumberDeveSerUmNumero" class="Tests\Feature\FormularioTest" classname="Tests.Feature.FormularioTest" file="/var/www/tests/Feature/FormularioTest.php" line="76" assertions="3" time="0.005320"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: laravel-app
+    container_name: laravel-app
+    restart: unless-stopped
+    volumes:
+      - .:/var/www
+    networks:
+      - laravel
+    ports:
+      - "8000:8000"
+
+  swagger:
+    image: swaggerapi/swagger-ui
+    container_name: swagger-ui
+    environment:
+      - API_URL=http://localhost:8000/api/api-docs.json
+    ports:
+      - 8080:8080
+    networks:
+      - laravel
+
+  test:
+    image: laravel-app
+    container_name: laravel-test
+    entrypoint: ["./vendor/bin/phpunit"]
+    volumes:
+      - .:/var/www
+    networks:
+      - laravel
+
+networks:
+  laravel:

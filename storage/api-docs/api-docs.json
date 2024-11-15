@@ -1,0 +1,154 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Desafio Desenvolvedor BackEnd PHP",
+        "description": "Este projeto é uma API Laravel que gerencia formulários dinâmicos e seus preenchimentos. O sistema armazena os dados dos formulários em arquivos JSON e permite que os usuários preencham e consultem esses formulários via uma interface RESTful",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/formularios/{id_formulario}/preenchimentos": {
+            "get": {
+                "tags": [
+                    "Formulários"
+                ],
+                "summary": "Obter preenchimentos de formulário",
+                "operationId": "getPreenchimentos",
+                "parameters": [
+                    {
+                        "name": "id_formulario",
+                        "in": "path",
+                        "description": "ID do formulário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Lista de preenchimentos do formulário"
+                    },
+                    "404": {
+                        "description": "Formulário não encontrado"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Formulário"
+                ],
+                "summary": "Preenche um formulário",
+                "operationId": "1f39e4d28119521a65833c7d3cd113c0",
+                "parameters": [
+                    {
+                        "name": "id_formulario",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "additionalProperties": [
+                                    {
+                                        "property": "key",
+                                        "type": "string"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Formulário preenchido com sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Erro de validação",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Formulário não encontrado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Erro de validação dos dados enviados",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "string"
+                                        },
+                                        "details": {
+                                            "type": "array",
+                                            "items": [
+                                                {
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Formulário",
+            "description": "Formulário"
+        },
+        {
+            "name": "Formulários",
+            "description": "Formulários"
+        }
+    ]
+}
