@@ -20,7 +20,8 @@
                         "description": "ID do formulário",
                         "required": true,
                         "schema": {
-                            "type": "string"
+                            "type": "string",
+                            "example": "form-2"
                         }
                     }
                 ],
@@ -46,7 +47,8 @@
                         "required": true,
                         "schema": {
                             "type": "string"
-                        }
+                        },
+                        "example": "form-2"
                     }
                 ],
                 "requestBody": {
@@ -55,6 +57,11 @@
                         "application/json": {
                             "schema": {
                                 "type": "object",
+                                "example": {
+                                    "field-2-1": "Smartphone X",
+                                    "field-2-2": 30,
+                                    "field-2-3": "Alimentos"
+                                },
                                 "additionalProperties": [
                                     {
                                         "property": "key",

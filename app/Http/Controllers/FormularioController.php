@@ -25,7 +25,7 @@ class FormularioController extends Controller
 
 
 
-    /**
+   /**
      * @OA\Post(
      *     path="/api/formularios/{id_formulario}/preenchimentos",
      *     summary="Preenche um formulário",
@@ -34,7 +34,8 @@ class FormularioController extends Controller
      *         name="id_formulario",
      *         in="path",
      *         required=true,
-     *         @OA\Schema(type="string")
+     *         @OA\Schema(type="string"),
+     *         example="form-2"
      *     ),
      *     @OA\RequestBody(
      *         required=true,
@@ -44,6 +45,11 @@ class FormularioController extends Controller
      *                 type="object",
      *                 additionalProperties={
      *                     @OA\Property(property="key", type="string")
+     *                 },
+     *                 example={
+     *                     "field-2-1": "Smartphone X",
+     *                     "field-2-2": 30,
+     *                     "field-2-3": "Alimentos"
      *                 }
      *             )
      *         )
@@ -113,12 +119,22 @@ class FormularioController extends Controller
      *     tags={"Formulários"},
      *     summary="Obter preenchimentos de formulário",
      *     operationId="getPreenchimentos",
-     *     parameters={
-     *         @OA\Parameter(name="id_formulario", in="path", description="ID do formulário", required=true, @OA\Schema(type="string"))
-     *     },
+     *     @OA\Parameter(
+     *         name="id_formulario",
+     *         in="path",
+     *         description="ID do formulário",
+     *         required=true,
+     *         @OA\Schema(type="string", example="form-2")
+     *     ),
      *     responses={
-     *         @OA\Response(response="200", description="Lista de preenchimentos do formulário"),
-     *         @OA\Response(response="404", description="Formulário não encontrado")
+     *         @OA\Response(
+     *             response="200",
+     *             description="Lista de preenchimentos do formulário"
+     *         ),
+     *         @OA\Response(
+     *             response="404",
+     *             description="Formulário não encontrado"
+     *         )
      *     }
      * )
      */
